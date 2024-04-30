@@ -1,5 +1,5 @@
-import {Component, Input, forwardRef} from '@angular/core';
-import {ControlValueAccessor, FormGroup, NG_VALUE_ACCESSOR, ReactiveFormsModule} from '@angular/forms';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, FormGroup, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 
 type InputTypes = "text" | "email" | "password"
 
@@ -26,28 +26,25 @@ export class PrimaryInputComponent implements ControlValueAccessor {
   @Input() inputName: string = "";
 
   value: string = ''
-  onChange: any = () => {
-  }
-  onTouched: any = () => {
-  }
+  onChange: any = () => {}
+  onTouched: any = () => {}
 
-  onInput(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
-    this.onChange(value);
+  onInput(event: Event){
+    const value = (event.target as HTMLInputElement).value
+    this.onChange(value)
   }
 
   writeValue(value: any): void {
-    this.value = value;
+    this.value = value
   }
 
   registerOnChange(fn: any): void {
-    this.onChange = fn;
+    this.onChange = fn
   }
 
   registerOnTouched(fn: any): void {
-    this.onTouched = fn;
+    this.onTouched = fn
   }
 
-  setDisabledState(isDisabled: boolean): void {
-  }
+  setDisabledState(isDisabled: boolean): void {}
 }
